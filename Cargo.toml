@@ -1,0 +1,33 @@
+[package]
+name = "tauri-icons-builder"
+version = "1.0.0"
+description = "Tauri图标集生成器"
+authors = ["Whikiey"]
+license = ""
+repository = ""
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+tauri-build = { version = "1.5", features = [] }
+
+[dependencies]
+tauri = { version = "1.5", features = ["shell-open"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = "1.35.1"
+icns = "0.3.1"
+image = "0.24.7"
+native-dialog = "0.7.0"
+base64 = "0.21.5"
+
+[features]
+# this feature is used for production builds or when `devPath` points to the filesystem
+# DO NOT REMOVE!!
+custom-protocol = ["tauri/custom-protocol"]
+
+[profile.release]
+lto = "thin"
+opt-level = "z"
+panic = "abort"

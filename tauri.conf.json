@@ -1,0 +1,55 @@
+{
+  "build": {
+    "beforeDevCommand": "",
+    "beforeBuildCommand": "",
+    "devPath": "html",
+    "distDir": "html",
+    "withGlobalTauri": true
+  },
+  "package": {
+    "productName": "Tauri图标集生成器",
+    "version": "1.0.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "shell": {
+        "all": false,
+        "open": true
+      }
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "rs.mut.tauri-icons-builder",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "windows": {
+        "wix": {
+          "language": "zh-CN"
+        },
+        "nsis": {
+          "languages": ["SimpChinese", "English"],
+          "displayLanguageSelector": true
+        }
+      }
+    },
+    "security": {
+      "csp": null
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "resizable": false,
+        "title": "Tauri图标集生成器",
+        "width": 800,
+        "height": 600
+      }
+    ]
+  }
+}

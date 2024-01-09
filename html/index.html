@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tauri图标集生成器</title>
+  <script src="jquery-3.7.1.min.js"></script>
+  <script type="module" src="/main.js" defer></script>
+</head>
+
+<body onselectstart="return false" oncontextmenu="return false">
+  <div class="container">
+    <div class="row"><img id="logo" src="favicon.ico" style="width: 256px" /></div>
+    <div class="row">
+      <p style="white-space: normal;">可以由一张源图片（支持PNG、JPG、BMP、ICO、GIF、TGA、TIF、WEBP），输出Tauri图标集的到指定的输出目录</p>
+    </div>
+    <div class="row">
+      <label for="image_path">来源图片：</label>
+      <input id="image_path" style="margin-left: 8px; width: 400px;" placeholder="图片路径..." autocomplete="off" />
+      <button style="margin-left: 8px" id="browse_png">浏览...</button>
+    </div>
+    <div class="row">
+      <label for="target_dir">输出目录：</label>
+      <input id="target_dir" style="margin-left: 8px; width: 400px;" placeholder="目录路径..." autocomplete="off" />
+      <button style="margin-left: 8px" id="browse_dir">浏览...</button>
+    </div>
+    <div class="row">
+      <button id="build_icons">生成</button>
+    </div>
+    <div class="row">
+    <p id="msg"></p>
+  </div>
+  </div>
+</body>
+
+</html>
